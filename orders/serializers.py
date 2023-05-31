@@ -6,9 +6,14 @@ SerializerMethodField
 )
 from rest_framework import serializers
 
-
+class CategoriasSerializer(ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = '__all__'
 
 class ProductoSerializer(ModelSerializer):
+    categoriaProducto = CategoriasSerializer(many=False)
     class Meta:
         model = Producto
         fields = '__all__'
+
