@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'orders',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount'
+    'allauth.socialaccount',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

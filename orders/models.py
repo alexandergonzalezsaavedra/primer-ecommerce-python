@@ -18,16 +18,16 @@ class Producto(models.Model):
     fechaModificacionProducto = models.DateTimeField(null=True)
     existenciaProducto = models.IntegerField(null=True)
     def __str__(self):
-        return f'{self.nombre}'
+        return f'{self.nombreProducto}'
 
 class Historial(models.Model):
     productoHistorial = models.ForeignKey(Producto , on_delete=models.CASCADE , null=True)
     def __str__(self):
-        return f'{self.producto}'
+        return f'{self.productoHistorial}'
 
 class OrdenCompra(models.Model):
     productoOrdenCompra = models.ForeignKey(Producto , on_delete=models.CASCADE , null=True)
     fechaCreacionOrdenCompra = models.DateTimeField(null=True)
     estadoOrdenCompra = models.BooleanField(null=True)
     def __str__(self):
-        return f'{self.producto}'
+        return f'{self.productoOrdenCompra}'
