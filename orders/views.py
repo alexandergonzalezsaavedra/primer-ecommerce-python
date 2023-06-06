@@ -7,8 +7,8 @@ from .serializers import ProductoSerializer,CategoriasSerializer
 # @permission_classes((AllowAny, ))
 class productListApi(ListAPIView):
     serializer_class = ProductoSerializer
-    # queryset = Producto.objects.filter(precioVentaProducto__lte=230, precioCompraProducto__gte=180)
     queryset = Producto.objects.all().order_by('nombreProducto')
+    # queryset = Producto.objects.filter(precioVentaProducto__lte=230, precioCompraProducto__gte=180)
 
 class categoryListApi(ListAPIView):
     serializer_class = CategoriasSerializer
