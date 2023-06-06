@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_framework',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -53,10 +55,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # para que acepte las peticiones de cualquier origen
 ]
 
-#CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'ecommerce.urls'
 
