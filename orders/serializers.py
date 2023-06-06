@@ -16,4 +16,3 @@ class ProductoSerializer(ModelSerializer):
     class Meta:
         model = Producto
         fields = '__all__'
-
