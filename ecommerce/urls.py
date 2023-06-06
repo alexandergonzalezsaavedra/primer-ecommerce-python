@@ -18,8 +18,13 @@ from django.urls import path
 from django.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
+#from rest_auth.views import LoginView, LogoutView, PasswordChangeView, PasswordResetView,PasswordResetConfirmView, UserDetailsView
+from dj_rest_auth.registration.views import RegisterView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path("orders/", include("orders.urls", namespace="orders")),
+    path('dj_rest_auth/', include('dj_rest_auth.urls')),
+    path('auth/registration/', RegisterView.as_view(), name='rest_register'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -44,8 +44,19 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'corsheaders',
-
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+    'rest_framework.authtoken',
 ]
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+#REST_AUTH_REGISTER_VERIFICATION_ENABLED = False
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,10 +150,10 @@ AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.ModelBackend',
 'allauth.account.auth_backends.AuthenticationBackend',
 ]
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_USERNAME_REQUIRED = False
+#ACCOUNT_EMAIL_REQUIRED = True
+#ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+#ACCOUNT_AUTHENTICATION_METHOD = 'email'
+#ACCOUNT_USERNAME_REQUIRED = False
 
 
 STATIC_URL = '/static/'
