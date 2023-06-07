@@ -71,6 +71,7 @@
         const render = (data) => {
             $("#informacion").html("")
             data.map((item, i) => {
+                console.log(item)
                 $("#informacion").append(`
                 <div class='col-sm-4 mb-4'>
                     <div class='card p-3'>
