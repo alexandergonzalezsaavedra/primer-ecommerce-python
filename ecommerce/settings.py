@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# agregar para permitir o negar acceso a las api INSTALLED_APPS = [ 'corsheaders',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -68,6 +69,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+#CORS_ORIGIN_WHITELIST = [
+#'url permitir ingreso a las api',
+#]
+
+#CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
