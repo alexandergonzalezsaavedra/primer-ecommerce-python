@@ -10,7 +10,8 @@ class Categoria(models.Model):
 
 class Producto(models.Model):
     nombreProducto = models.CharField(max_length=100, null=True)
-    categoriaProducto = models.ForeignKey(Categoria , on_delete=models.CASCADE , null=True)
+    categoriaProducto = models.ManyToManyField(Categoria)
+    #categoriaProducto = models.ForeignKey(Categoria , on_delete=models.CASCADE , null=True)
     precioCompraProducto = models.IntegerField(null=True)
     precioVentaProducto = models.IntegerField(null=True)
     detalleProducto = models.TextField(max_length=500, null=True)

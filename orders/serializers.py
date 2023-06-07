@@ -12,7 +12,7 @@ class CategoriasSerializer(ModelSerializer):
         fields = '__all__'
 
 class ProductoSerializer(ModelSerializer):
-    categoriaProducto = CategoriasSerializer(many=False)
+    categoriaProducto = CategoriasSerializer(many=True)
     class Meta:
         model = Producto
         fields = '__all__'
