@@ -75,12 +75,23 @@
                 $("#informacion").append(`
                 <div class='col-sm-4 mb-4'>
                     <div class='card p-3'>
-                    No.: ${i + 1} / id:${item.id}
-                    <p>
-                    <br>
-                    <br>
-                    ${item.nombreProducto}
-                    </p>
+                        <p>
+                            No.: ${i + 1} / id:${item.id}
+                        </p>
+                        <p>
+                            ${item.nombreProducto}
+                        </p>
+                        <div class='card'>
+                            <div class='card-body'>
+                                <img class='img-thumbnail' src='${item.imagenProducto}'>
+                            </div>
+                        </div>
+                        <h3>
+                            Precio: ${item.precioCompraProducto}
+                        </h3>
+                        <p>
+                            <small>Unidades disponibles: ${item.existenciaProducto}</small>
+                        </p>
                     </div>
                 </div>
                 `)
@@ -92,7 +103,6 @@
         });
         function consumirApi() {
             $('#cargando').show()
-
             $.ajax({
                 type: "GET",
                 url: url,
