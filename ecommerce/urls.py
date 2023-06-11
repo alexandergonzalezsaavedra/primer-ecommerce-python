@@ -18,7 +18,6 @@ from django.urls import path
 from django.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
-#from rest_auth.views import LoginView, LogoutView, PasswordChangeView, PasswordResetView,PasswordResetConfirmView, UserDetailsView
 from dj_rest_auth.registration.views import RegisterView
 
 urlpatterns = [

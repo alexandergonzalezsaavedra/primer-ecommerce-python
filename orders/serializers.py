@@ -1,4 +1,4 @@
-from .models import Categoria,Producto,Historial,OrdenCompra
+from .models import Categoria,Subcategoria,Producto,Historial,OrdenCompra
 
 from rest_framework.serializers import ModelSerializer
 from rest_framework.serializers import (
@@ -11,8 +11,14 @@ class CategoriasSerializer(ModelSerializer):
         model = Categoria
         fields = '__all__'
 
+class SubcategoriasSerializer(ModelSerializer):
+    categoriaAsociada = CategoriasSerializer(many=False)
+    class Meta:
+        model = Subcategoria
+        fields = '__all__'
+
 class ProductoSerializer(ModelSerializer):
-    categoriaProducto = CategoriasSerializer(many=True)
+    subCategoriaProducto = SubcategoriasSerializer(many=True)
     class Meta:
         model = Producto
         fields = '__all__'
