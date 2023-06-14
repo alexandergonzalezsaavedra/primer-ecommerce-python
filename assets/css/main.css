@@ -55,6 +55,7 @@ nav.menu a.avatar {
   border: solid 1px #e0e0e0;
   border-radius: 50%;
   transition: 0.5s;
+  position: relative;
 }
 nav.menu a.avatar:hover {
   border: solid 1px var(--azul);
@@ -63,6 +64,19 @@ nav.menu a.avatar:hover {
 nav.menu .avatar img {
   width: 32px;
   height: 32px;
+  left: 0;
+  position: absolute;
+}
+nav.menu .dropstart .dropdown-toggle:before {
+  display: none;
+  /* margin-left: -4px; */
+}
+nav.menu .dropstart {
+  position: relative;
+}
+nav.menu .dropdown-center {
+  position: relative;
+  padding-top: 10px;
 }
 nav.menu .carrito img {
   width: 20px;

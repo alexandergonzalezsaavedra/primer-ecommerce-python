@@ -19,6 +19,7 @@ class productListApi(ListAPIView):
     queryset = Producto.objects.all().order_by('nombreProducto')
     # queryset = Producto.objects.filter(precioVentaProducto__lte=230, precioCompraProducto__gte=180)
 
+
 # Ejemplos filtro
 # queryset = Producto.objects.filter(precio__lte=5000000, precio__gte=1000000)
 # queryset = generalModels.City.objects.all().order_by('name')
