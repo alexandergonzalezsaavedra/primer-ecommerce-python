@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Categoria,Subcategoria,Producto,Historial,OrdenCompra
-from rest_framework.generics import CreateAPIView,RetrieveUpdateAPIView,UpdateAPIView,ListAPIView,RetrieveUpdateDestroyAPIView,DestroyAPIView
+from rest_framework.generics import CreateAPIView,RetrieveUpdateAPIView,UpdateAPIView,ListAPIView,RetrieveUpdateDestroyAPIView,DestroyAPIView,RetrieveAPIView
 from .serializers import CategoriasSerializer,SubcategoriasSerializer,ProductoSerializer
 
 # Create your views here.
@@ -18,6 +18,11 @@ class productListApi(ListAPIView):
     serializer_class = ProductoSerializer
     queryset = Producto.objects.all().order_by('nombreProducto')
     # queryset = Producto.objects.filter(precioVentaProducto__lte=230, precioCompraProducto__gte=180)
+
+
+class ProductDetailView(RetrieveAPIView):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
 
 
 # Ejemplos filtro

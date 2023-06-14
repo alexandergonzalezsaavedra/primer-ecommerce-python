@@ -17,6 +17,7 @@ const api = async () => {
             clon.querySelector(".tarjeta-categoria .imagen-tarjeta img").src = item.imagenProducto
             clon.querySelector(".tarjeta-categoria .imagen-tarjeta img").alt = item.nombreProducto
             clon.querySelector(".tarjeta-categoria p").textContent = item.descripcionCortaProducto
+            clon.querySelector(".tarjeta-categoria .btn-outline-secondary").href = `./detalle-producto.html?idProducto=${item.id}`
             fragment.appendChild(clon)
         })
         resCategorias.appendChild(fragment)
